@@ -1,0 +1,439 @@
+﻿body {
+}
+
+#demo {
+    background: #E8CEBF;
+    padding-top:90px;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100vw;
+    height: 80vh;
+    object-fit: contain;
+    overflow: hidden;
+    background-size: contain;
+}
+
+.carousel-item button {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #266150;
+    color: #fff;
+    padding: 12px 14px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 0px;
+    width: max-content;
+    cursor: pointer;
+    transition: all 0.3s 0s ease-in-out;
+}
+
+    .carousel-item button:hover {
+        transform: scale(1.04, 1);
+        background-color: #4F4846;
+        text-decoration: none;
+    }
+
+
+
+
+
+
+/*card start*/
+
+
+
+.card {
+    width: 380px;
+    border: none;
+    height: 450px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.bg-dark {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+    .bg-dark .container {
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+.p-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-price {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.heart i {
+    font-size: 50px;
+    opacity: 0;
+    color: red;
+}
+
+    .heart i:hover {
+        color: red;
+    }
+
+.p-image img {
+    width: 240px;
+    /*transform: rotate(15deg);*/
+    transition: all 0.6s;
+    height: 297px;
+}
+
+.card:hover .heart i {
+    animation: heart 300ms ease-in forwards;
+    animation-delay: 500ms;
+}
+
+.p-about {
+    position: absolute;
+    width: 170px;
+    font-size: 12px;
+    top: 140px;
+    left: -125px;
+    opacity: 0;
+}
+
+.card:hover .p-about {
+    animation: content 300ms ease-in forwards;
+}
+
+@keyframes content {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        left: 25px;
+    }
+}
+
+@keyframes heart {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.card:hover .p-image img {
+    animation: onimage 300ms ease-in forwards;
+}
+
+.card:hover .p-price {
+    animation: onprice 500ms ease-in forwards;
+}
+
+@keyframes onprice {
+    0% {
+        right: 10px;
+        top: 20px;
+    }
+
+    50% {
+        right: 60px;
+        top: 30px;
+    }
+
+    100% {
+        right: 289px;
+        top: 70px;
+    }
+}
+
+@keyframes onimage {
+    0% {
+        width: 250px;
+    }
+
+    50% {
+        width: 200px;
+        transform: translateY(-30px);
+        transform: translateX(100px);
+    }
+
+    100% {
+        width: 150px;
+        top: 100px;
+        transform: translate(100px,-68px);
+    }
+}
+
+.buttons {
+    position: absolute;
+    bottom: -150px;
+}
+
+.card:hover .buttons {
+    animation: buttons 500ms ease-in forwards;
+}
+
+@keyframes buttons {
+    0% {
+        bottom: -100px;
+    }
+
+    100% {
+        bottom: 20px;
+    }
+}
+
+.btn {
+    height: 50px;
+    font-size: 16px;
+    width: 140px !important;
+    font-weight: 600;
+}
+
+
+
+
+/* start for media size 768*/
+
+
+
+
+@media only screen and (max-width:768px) {
+    .bg-dark {
+        padding-top: 10px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+        .bg-dark .container {
+            position: inherit;
+            padding: 10px 122px 3px 130px;
+        }
+}
+
+
+
+
+/* start for media size 250*/
+
+@media only screen and (min-width:250px) {
+    .bg-dark {
+        padding-top: 10px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+        .bg-dark .container {
+            justify-content: center;
+            padding: 10px 10px 10px 25px;
+        }
+
+
+
+    .card {
+        width: 325px;
+        border: none;
+        height: 400px;
+        border-radius: 1px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    .p-price h1 {
+        font-size: revert;
+    }
+
+    .p-image img {
+        width: 60%;
+        transition: all 0.6s;
+        height: 290px;
+    }
+
+    .p-about {
+        position: absolute;
+        width: 100px;
+        font-size: 10px;
+        top: 120px;
+        left: -125px;
+        opacity: 0;
+    }
+
+
+
+    @keyframes onprice {
+        0% {
+            right: 10px;
+            top: 20px;
+        }
+
+        50% {
+            right: 60px;
+            top: 30px;
+        }
+
+        100% {
+            right: inherit;
+            top: 70px;
+        }
+    }
+
+    @keyframes onimage {
+        0% {
+            width: 200px;
+        }
+
+        50% {
+            width: 200px;
+            transform: translateY(-30px);
+            transform: translateX(100px);
+        }
+
+        100% {
+            width: 150px;
+            height: auto;
+            transform: translate(60px,-6px);
+        }
+    }
+
+
+
+    .btn {
+        height: 40px;
+        font-size: 13px;
+        width: 120px !important;
+        font-weight: 600;
+    }
+}
+
+
+
+
+
+
+/*card End*/
+
+
+
+/*Footer start*/
+
+
+.footer-dark {
+    padding: 50px 0;
+    color: #f0f9ff;
+    background-color: #282d32;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .footer-dark h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .footer-dark ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+        .footer-dark ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.6;
+        }
+
+            .footer-dark ul a:hover {
+                opacity: 0.8;
+            }
+
+@media (max-width:768px) {
+
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+.footer-dark .item.text {
+    margin-bottom: 36px;
+}
+
+@media (max-width:767px) {
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+}
+
+
+.footer-dark .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+    text-align: center;
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+}
+
+    .footer-dark .item.social > a:hover {
+        opacity: 0.9;
+    }
+
+.footer-dark .copyright {
+    text-align: center;
+    padding-top: 24px;
+    opacity: 0.3;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+/*Footer End*/
+
